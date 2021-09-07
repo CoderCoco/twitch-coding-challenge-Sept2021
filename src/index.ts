@@ -1,5 +1,6 @@
-import {Main} from "./main";
+import "reflect-metadata";
+import { container } from "tsyringe";
+import { Main } from "./main";
 
-const app = new Main();
-
-console.log(app.helloWorld("CoderCoco"));
+const main = container.resolve(Main);
+console.log(main.helloWorld("CoderCoco"));
